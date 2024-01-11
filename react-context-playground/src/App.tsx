@@ -1,26 +1,27 @@
 import "./App.css";
-import { useContext } from "react";
 import { ThemeContext } from "./context/ThemeContext";
 import ThemeSelector from "./components/ThemeSelector";
+import { useState } from "react";
+import RogueComponent from "./components/RogueComponent";
 
 function App() {
-  const theme = useContext(ThemeContext);
+  const [theme, setTheme] = useState<string>("light");
 
   return (
     <ThemeContext.Provider value={theme}>
-      <div data-theme={theme} className="themeBox">
-        <h1>React Context Demonstration</h1>
-        <p>
-          This is a simple app for understanding the usage of React Context.
-        </p>
-        <p>
-          React Context is a global state management system: a way to share data
-          between components in an app without drilling through component props.
-        </p>
-        <p>I have used React Context to create various themes:</p>
-        <p>{theme}</p>
+      <div data-theme={theme} className="mainWrapper">
+        <section className="contentWrapper">
+          <h1>React Context Demonstration</h1>
+          <p>
+            This app uses themes to demonstrate React Context. Check the{" "}
+            <a href="www.github.com">readme.md file on Github</a> for further
+            explanation. I have used React Context to create various themes:
+          </p>
+          <p>Current theme: "{theme}"</p>
+          <ThemeSelector setTheme={setTheme} />
+          <RogueComponent />
+        </section>
       </div>
-      <ThemeSelector />
     </ThemeContext.Provider>
   );
 }

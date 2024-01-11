@@ -4,28 +4,62 @@
 }
 
 div[data-theme="light"] {
-  --background-color: white;
-  --text-color: purple;
+  --background-color: #ecf9ff;
+  --text-color: #26384d;
+  --link: #32439d;
+  --link-hover: #3a4da4;
+  --link-visited: #5e3aa4;
 }
 
 div[data-theme="purple"] {
-  --background-color: purple;
-  --text-color: white;
+  --background-color: #564362;
+  --text-color: #f2dfff;
+  --link: #f8f1ff;
+  --link-hover: #e8ecff;
+  --link-visited: #ffe8f3;
+}
+
+div[data-theme="green"] {
+  --background-color: #cddecd;
+  --text-color: #192820;
+  --link: #243a4c;
+  --link-hover: #284558;
+  --link-visited: #1d3747;
+}
+
+div[data-theme="blue"] {
+  --background-color: #add8e6;
+  --text-color: #2d4156;
+  --link: #23327f;
+  --link-hover: #29367d;
+  --link-visited: #1c2558;
 }
 
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
   text-align: center;
 }
 
-.themeBox {
+.mainWrapper {
+  padding-top: 2rem;
+  width: 100%;
+  height: 100%;
   background-color: var(--background-color);
   color: var(--text-color);
 }
 
-.testBox {
+.contentWrapper {
+  max-width: 900px;
+  margin: auto;
+}
+
+.rogueComponent {
+  border: 2px solid darkslateblue;
+  margin-top: 5rem;
+  padding: 1rem;
+  border-radius: 5px;
   background-color: var(--background-color);
   color: var(--text-color);
 }
