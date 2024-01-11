@@ -8,14 +8,18 @@ function App() {
 
   return (
     <ThemeContext.Provider value={theme}>
-      <h1>React Context Demonstration</h1>
-      <p>This is a simple app for understanding the usage of React Context.</p>
-      <p>
-        React Context is a global state management system: a way to share data
-        between components in an app without drilling through component props.
-      </p>
-      <p>I have used React Context to create various themes:</p>
-      <p>{theme}</p>
+      <div data-theme={theme} className="themeBox">
+        <h1>React Context Demonstration</h1>
+        <p>
+          This is a simple app for understanding the usage of React Context.
+        </p>
+        <p>
+          React Context is a global state management system: a way to share data
+          between components in an app without drilling through component props.
+        </p>
+        <p>I have used React Context to create various themes:</p>
+        <p>{theme}</p>
+      </div>
       <ThemeSelector />
     </ThemeContext.Provider>
   );

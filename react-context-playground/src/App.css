@@ -1,6 +1,31 @@
+:root {
+  --background-color: pink;
+  --text-color: red;
+}
+
+div[data-theme="light"] {
+  --background-color: white;
+  --text-color: purple;
+}
+
+div[data-theme="purple"] {
+  --background-color: purple;
+  --text-color: white;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+.themeBox {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.testBox {
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
