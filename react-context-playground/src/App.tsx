@@ -16,8 +16,7 @@ function App() {
           <a href="https://github.com/emoore29/React-Context-Playground#react-context-playground">
             readme.md file on Github
           </a>{" "}
-          for further explanation. I have used React Context to create various
-          themes.
+          for further explanation.
         </p>
 
         <p>Current theme: "{theme}"</p>
