@@ -5,15 +5,14 @@ export default function RogueComponent() {
   const [theme, setTheme] = useState<string>("light");
 
   return (
-    <ThemeContext.Provider value={theme}>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
       <div data-theme={theme} className="rogueComponent">
         <h2>Rogue Component</h2>
         <p>
-          This component is wrapped in its own ThemeContext.Provider. So it will
-          start with the default context value ("light") as the theme, but when
-          you click the following button, it will change its theme without
-          affecting the rest of the app. Likewise, it won't be affected by
-          changes in the app's theme.
+          This component starts with the default context value ("light") as the
+          theme, and when its state is updated, the theme will update without
+          updating the theme of the rest of the app. This is because it is
+          wrapped in its own ThemeContext.Provider and has its own state.
         </p>
 
         <button onClick={() => setTheme("blue")}>I choose my own theme!</button>

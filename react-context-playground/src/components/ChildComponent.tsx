@@ -9,8 +9,8 @@ export default function ChildComponent() {
       <h2>Child Component</h2>
       <p>
         This is a sibling of Rogue Component. It gets its theme from
-        useContext(ThemeContext), and gets its theme from the main app's context
-        (not its sibling), because it searches updwards.
+        useContext(ThemeContext), and gets its theme from the main app's
+        context.
       </p>
     </div>
   );

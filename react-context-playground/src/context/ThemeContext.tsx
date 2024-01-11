@@ -1,9 +1,16 @@
 import { createContext } from "react";
 
-// const SomeContext = createContext(defaultValue)
-// defaultValue is the value you want the context to have
-// when there is no matching context provider in the tree above the component that reads context
-export const ThemeContext = createContext("light");
+interface DefaultContextValue {
+  theme: string;
+  setTheme: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export const ThemeContext = createContext<DefaultContextValue>({
+  theme: "light",
+  setTheme: () => {
+    console.error("No context available.");
+  },
+});
 
 // createContext returns a context object
 // The object contains two properties:

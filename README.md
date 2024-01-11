@@ -13,22 +13,44 @@ The React documentation is fairly easy to follow for React Context:
 
 ## App Structure
 
-### ThemeContext
+### src/context/ThemeContext.tsx
 
-At `src/context/ThemeContext.tsx`, I've created ThemeContext using createContext():
+ThemeContext is created with default values.
 
-![Code to create ThemeContext.](image.png)
+![Screenshot of code for createContext()](image-5.png)
 
-### ThemeContext.Provider
+### src/components/ThemeProvider.tsx
 
-The main app (App.tsx) is wrapped in ThemeContext.Provider to provide all components in the app access to the theme:
+Provider component is created which includes the state value (theme) and the state setter (setTheme). This will wrap the entire app (as shown in main.tsx below).
 
-![Screenshot of App code.](image-2.png)
+![Screenshot of ThemeProvider component](image-6.png)
 
-### Rogue Component
+### src/main.tsx
 
-Although RogueComponent is a child of ThemeContext.Provider, if we look at the JSX for the component, I've wrapped it in its own ThemeContext.Provider component:
+![App wrapped in ThemeProvider](image-4.png)
 
-![Screenshot of code for the Rogue Component.](image-3.png)
+### src/App.tsx
 
-This is to demonstrate that separate contexts can be created in the same app.
+The app retrieves **theme** with useContext() to set the theme for the app (using data-theme and CSS variables).
+
+![Screenshot of App component.](image-7.png)
+
+### src/components/ThemeSelector
+
+The ThemeSelector retrieves **setTheme** with useContext() and can now use it to setThemes with buttons, without needing to pass setTheme as a prop from its parent, the App.
+
+![Screenshot of ThemeSelector](image-8.png)
+
+### src/components/ChildComponent
+
+ChildComponent also retrieves **theme** with useContext(), so, again, we don't need to pass theme as a prop from its parent, the App.
+
+![Screenshot of ChildComponent](image-9.png)
+
+### src/components/RogueComponent
+
+RogueComponent, despite being a child of the App which is wrapped in the ThemeProvider, is wrapped in its own Provider:
+
+![Screenshot of RogueComponent](image-10.png)
+
+The Provider **theme** and **setTheme** default values will be the same as the ThemeContext default values. But because this component has its own state, when **setTheme** is called, it will update the theme only for this Provider. So the RogueComponent theme will change, but this will not affect the App theme. Likewise, updating the App theme will not affect the RogueComponent theme.
