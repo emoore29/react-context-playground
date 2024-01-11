@@ -21,4 +21,14 @@ At `src/context/ThemeContext.tsx`, I've created ThemeContext using createContext
 
 ### ThemeContext.Provider
 
-The main app (App.tsx) is wrapped in ThemeContext.Provider to provide all components in the app access to the theme.
+The main app (App.tsx) is wrapped in ThemeContext.Provider to provide all components in the app access to the theme:
+
+![Screenshot of App code.](image-2.png)
+
+### Rogue Component
+
+Although RogueComponent is a child of ThemeContext.Provider, if we look at the JSX for the component, I've wrapped it in its own ThemeContext.Provider component:
+
+![Screenshot of code for the Rogue Component.](image-3.png)
+
+This is to demonstrate that separate contexts can be created in the same app.

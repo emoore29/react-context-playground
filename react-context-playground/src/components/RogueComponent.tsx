@@ -15,6 +15,7 @@ export default function RogueComponent() {
           affecting the rest of the app. Likewise, it won't be affected by
           changes in the app's theme.
         </p>
+
         <button onClick={() => setTheme("blue")}>I choose my own theme!</button>
         <button onClick={() => setTheme("light")}>Back to the default</button>
       </div>
