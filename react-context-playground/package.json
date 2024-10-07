@@ -2,7 +2,7 @@
   "name": "react-context-playground",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://emoore29.github.io/React-Context-Playground/",
+  "homepage": "https://emoore29.github.io/react-context-playground/",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
