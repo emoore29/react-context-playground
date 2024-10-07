@@ -13,7 +13,7 @@ function App() {
         <h1>React Context Demo</h1>
         <p>
           This app uses themes to demonstrate React Context. Check the{" "}
-          <a href="https://github.com/emoore29/React-Context-Playground#react-context-playground">
+          <a href="https://github.com/emoore29/react-context-playground#react-context-playground">
             readme.md file on Github
           </a>{" "}
           for further explanation.
